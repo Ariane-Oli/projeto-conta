@@ -5,6 +5,17 @@ public class Conta {
     private int digitoVerif;
     private String nomeTitular;
     private String cpfTitular;
+    private double saldo;
+
+    public Conta(int numeroConta, int digitoVerif, String nomeTitular, String cpfTitular) {
+        super();
+        this.numeroConta = numeroConta;
+        this.digitoVerif = digitoVerif;
+        this.nomeTitular = nomeTitular;
+        this.cpfTitular = cpfTitular;
+        this.saldo = 0.0;
+
+    }
 
     public int getNumeroConta() {
         return numeroConta;
@@ -38,13 +49,21 @@ public class Conta {
         this.cpfTitular = cpfTitular;
     }
 
-    public double getSaldo() {
-        return saldo;
+    public String exibirInfo(){
+        return "Conta" +numeroConta+"/"+" - "+nomeTitular+" ("+cpfTitular+" R$ "+String.format("%.2f", this.saldo);
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void depositar(double valor) {
+        this.saldo += valor;
+    }
+    public boolean sacar(double valor){
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+            return true;
+        }
+        return false;
     }
 
-    private double saldo;
 }
+
+

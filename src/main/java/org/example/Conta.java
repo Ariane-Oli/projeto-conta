@@ -50,7 +50,7 @@ public class Conta {
     }
 
     public String exibirInfo(){
-        return "Conta" +numeroConta+"/"+" - "+nomeTitular+" ("+cpfTitular+" R$ "+String.format("%.2f", this.saldo);
+        return "Conta " +numeroConta+" /"+" - "+nomeTitular+" ("+cpfTitular+") R$ "+String.format("%.2f", this.saldo);
     }
 
     public void depositar(double valor) {

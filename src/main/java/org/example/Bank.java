@@ -16,7 +16,7 @@ public class Bank {
         System.out.println("************ YouBank ***********");
 
         System.out.println("Digite seu nome: ");
-        nomeTitular = sc.next();
+        nomeTitular = sc.nextLine();
 
         System.out.println("Digite seu o número de sua conta: ");
         numeroContaId = sc.nextInt();
@@ -36,7 +36,7 @@ public class Bank {
                     valor = sc.nextDouble();
                     c1.depositar(valor);
                     System.out.println("***********Dados do seu YouBank*********");
-                    System.out.println("Titular da conta: "+nomeTitular+"\nNúmero da Conta: "+numeroContaId+"\nSaldo atual é de: "+ c1.getSaldo());
+                    System.out.println("Titular da conta: "+nomeTitular+"\nNúmero da Conta: "+numeroContaId+"\nCpf do titular: "+cpfTitular+"\nSaldo atual é de: "+ c1.getSaldo());
                     System.out.println("*****************************************\n");
                     break;
 

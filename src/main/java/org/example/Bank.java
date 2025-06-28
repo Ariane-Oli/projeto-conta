@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Bank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Conta c1 = new Conta(1234, 5, "987.0125.01245-00");
+        Conta c1 = new Conta(1234, 5);
         double valor;
-        double valorTotal = 0;
+        String cpfTitular;
         String nomeTitular;
         int numeroContaId;
         int opcao;
@@ -18,8 +18,11 @@ public class Bank {
         System.out.println("Digite seu nome: ");
         nomeTitular = sc.next();
 
-        System.out.println("Digite seu o numero de sua conta: ");
+        System.out.println("Digite seu o número de sua conta: ");
         numeroContaId = sc.nextInt();
+
+        System.out.println("Informe o Cpf do Titular: ");
+        cpfTitular = sc.next();
 
         do {
             System.out.println("1 - Extrato / 2 - Deposito / 3 - Saque / -1 - Encerrar");
@@ -32,7 +35,9 @@ public class Bank {
                     System.out.println("Digite o valor a depositar");
                     valor = sc.nextDouble();
                     c1.depositar(valor);
+                    System.out.println("***********Dados do seu YouBank*********");
                     System.out.println("Titular da conta: "+nomeTitular+"\nNúmero da Conta: "+numeroContaId+"\nSaldo atual é de: "+ c1.getSaldo());
+                    System.out.println("*****************************************\n");
                     break;
 
                 case 3:

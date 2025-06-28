@@ -6,11 +6,10 @@ public class Conta {
     private String cpfTitular;
     private double saldo;
 
-    public Conta(int numeroConta, int digitoVerif, String cpfTitular) {
+    public Conta(int numeroConta, int digitoVerif) {
         super();
         this.numeroConta = numeroConta;
         this.digitoVerif = digitoVerif;
-        this.cpfTitular = cpfTitular;
         this.saldo = 0.0;
 
     }
@@ -29,14 +28,7 @@ public class Conta {
 
     public void setDigitoVerif(int digitoVerif) {
         this.digitoVerif = digitoVerif;
-    }
 
-    public String getCpfTitular() {
-        return cpfTitular;
-    }
-
-    public void setCpfTitular(String cpfTitular) {
-        this.cpfTitular = cpfTitular;
     }
     public double getSaldo() {
         return this.saldo;
@@ -51,9 +43,6 @@ public class Conta {
         this.saldo += valor;
     }
 
-    public void valorTotal(double valor){
-        this.saldo += valor;
-    }
     public boolean sacar(double valor){
         if (this.saldo >= valor) {
             this.saldo -= valor;

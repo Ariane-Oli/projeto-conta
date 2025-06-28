@@ -38,6 +38,10 @@ public class Conta {
     public void setCpfTitular(String cpfTitular) {
         this.cpfTitular = cpfTitular;
     }
+    public double getSaldo() {
+        return this.saldo;
+    }
+
 
     public String exibirInfo(){
         return "Conta " +numeroConta+" / + (" +cpfTitular+  ") + R$" + String.format("%.2f",this.saldo);
@@ -48,7 +52,7 @@ public class Conta {
     }
 
     public void valorTotal(double valor){
-        this.saldo = valor;
+        this.saldo += valor;
     }
     public boolean sacar(double valor){
         if (this.saldo >= valor) {
